@@ -1,0 +1,173 @@
+<section
+  class="relative min-h-[620px] overflow-hidden bg-zinc-950"
+>
+
+  <!-- BACKGROUND IMAGE -->
+
+  <div
+    class="absolute inset-0 bg-cover bg-center"
+    [style.background-image]="'url(' + movie.backdrop + ')'"
+  ></div>
+
+
+  <!-- DARK GRADIENT -->
+
+  <div
+    class="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/90 to-zinc-950/20"
+  ></div>
+
+
+  <!-- BOTTOM FADE -->
+
+  <div
+    class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-zinc-950 to-transparent"
+  ></div>
+
+
+  <!-- CONTENT -->
+
+  <div
+    class="relative z-10 mx-auto flex min-h-[620px] max-w-7xl items-center px-5 py-20 lg:px-8"
+  >
+
+    <div class="max-w-2xl">
+
+      <!-- FEATURED -->
+
+      <div
+        class="mb-5 flex items-center gap-3"
+      >
+
+        <span
+          class="h-1 w-8 rounded-full bg-red-600"
+        ></span>
+
+        <span
+          class="text-sm font-bold tracking-[0.25em] text-red-500"
+        >
+          FEATURED MOVIE
+        </span>
+
+      </div>
+
+
+      <!-- TITLE -->
+
+      <h1
+        class="text-5xl font-black leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-7xl"
+      >
+        {{ movie.title }}
+      </h1>
+
+
+      <!-- MOVIE META -->
+
+      <div
+        class="mt-6 flex flex-wrap items-center gap-4 text-sm"
+      >
+
+        <!-- RATING -->
+
+        <span
+          class="flex items-center gap-1 font-semibold text-yellow-400"
+        >
+          <i class="pi pi-star-fill text-xs"></i>
+
+          {{ movie.rating }}
+        </span>
+
+
+        <span class="text-zinc-500">
+          •
+        </span>
+
+
+        <!-- YEAR -->
+
+        <span class="text-zinc-300">
+          {{ movie.year }}
+        </span>
+
+
+        <span class="text-zinc-500">
+          •
+        </span>
+
+
+        <!-- DURATION -->
+
+        <span class="text-zinc-300">
+          {{ movie.duration }}
+        </span>
+
+
+        <span class="text-zinc-500">
+          •
+        </span>
+
+
+        <!-- GENRE -->
+
+        <span class="text-zinc-300">
+          {{ movie.genre }}
+        </span>
+
+      </div>
+
+
+      <!-- DESCRIPTION -->
+
+      <p
+        class="mt-6 max-w-xl text-base leading-7 text-zinc-300 sm:text-lg"
+      >
+        {{ movie.description }}
+      </p>
+
+
+      <!-- BUTTONS -->
+
+      <div
+        class="mt-8 flex flex-wrap gap-3"
+      >
+
+        <p-button
+          label="Watch Now"
+          icon="pi pi-play"
+          size="large"
+        />
+
+        <p-button
+          label="More Details"
+          icon="pi pi-info-circle"
+          severity="secondary"
+          [outlined]="true"
+          size="large"
+        />
+
+      </div>
+
+
+      <!-- SMALL INFORMATION -->
+
+      <div
+        class="mt-8 flex items-center gap-3 text-xs text-zinc-500"
+      >
+
+        <span class="flex items-center gap-2">
+          <i class="pi pi-check-circle text-green-500"></i>
+          HD Available
+        </span>
+
+        <span>•</span>
+
+        <span>
+          {{ movie.secondGenre }}
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

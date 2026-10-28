@@ -1,0 +1,95 @@
+<nav class="sticky top-0 z-50 border-b border-zinc-800/70 bg-zinc-950/95 backdrop-blur-md">
+  <div class="mx-auto flex h-18 max-w-7xl items-center justify-between px-5 lg:px-8">
+    <!-- LOGO -->
+    <a href="#" class="flex items-center gap-2 no-underline">
+      <span
+        class="flex h-9 w-9 items-center justify-center rounded-xl bg-red-600 text-sm text-white"
+      >
+        <i class="pi pi-play"></i>
+      </span>
+
+      <span class="text-xl font-bold tracking-tight text-white">
+        Reign Movie<span class="text-red-500">Hub</span>
+      </span>
+    </a>
+
+    <!-- DESKTOP NAVIGATION -->
+    <div class="hidden items-center gap-8 md:flex">
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="nav-link"
+      >
+        Home
+      </a>
+
+      <a routerLink="/movies" routerLinkActive="active" class="nav-link"> Movies </a>
+
+      <a href="#" class="nav-link"> Genres </a>
+
+      <a href="#" class="nav-link"> Trending </a>
+    </div>
+
+    <!-- DESKTOP ACTIONS -->
+    <div class="hidden items-center gap-2 md:flex">
+      <p-button
+        icon="pi pi-search"
+        [text]="true"
+        [rounded]="true"
+        severity="secondary"
+        ariaLabel="Search"
+      />
+
+      <p-button
+        icon="pi pi-user"
+        [text]="true"
+        [rounded]="true"
+        severity="secondary"
+        ariaLabel="Profile"
+      />
+    </div>
+
+    <!-- MOBILE MENU BUTTON -->
+    <button
+      type="button"
+      class="flex h-10 w-10 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900 text-zinc-300 transition hover:bg-zinc-800 hover:text-white md:hidden"
+      (click)="toggleMobileMenu()"
+      aria-label="Toggle menu"
+    >
+      <i class="pi" [class.pi-bars]="!mobileMenuOpen" [class.pi-times]="mobileMenuOpen"></i>
+    </button>
+  </div>
+
+  <!-- MOBILE MENU -->
+  @if (mobileMenuOpen) {
+    <div class="border-t border-zinc-800 bg-zinc-950 px-5 py-5 md:hidden">
+      <div class="flex flex-col gap-2">
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="mobile-nav-link"
+        >
+          <i class="pi pi-home"></i>
+          Home
+        </a>
+
+        <a routerLink="/movies" routerLinkActive="active" class="mobile-nav-link">
+          <i class="pi pi-video"></i>
+          Movies
+        </a>
+
+        <a href="#" class="mobile-nav-link">
+          <i class="pi pi-list"></i>
+          Genres
+        </a>
+
+        <a href="#" class="mobile-nav-link">
+          <i class="pi pi-chart-line"></i>
+          Trending
+        </a>
+      </div>
+    </div>
+  }
+</nav>

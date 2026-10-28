@@ -1,0 +1,37 @@
+<main class="min-h-screen bg-zinc-950">
+
+  <!-- HERO -->
+
+  <app-hero></app-hero>
+
+
+  <!-- TRENDING -->
+
+  <app-movie-section
+    title="Trending Now"
+    subtitle="What everyone is watching"
+    [movies]="trendingMovies"
+    (movieSelected)="onMovieSelected($event)"
+  />
+
+
+  <!-- POPULAR -->
+
+  <app-movie-section
+    title="Popular Movies"
+    subtitle="Top movies people are watching"
+    [movies]="popularMovies"
+    (movieSelected)="onMovieSelected($event)"
+  />
+
+
+  <!-- LATEST -->
+
+  <app-movie-section
+    title="Latest Movies"
+    subtitle="Fresh movies added recently"
+    [movies]="latestMovies"
+    (movieSelected)="onMovieSelected($event)"
+  />
+
+</main>
